@@ -1,0 +1,62 @@
+<template>
+  <div class="container slds-var-p-around_medium">
+    <template if:true={hasReport}>
+      <template if:true={isLoading}>
+        <div class="spinner-container">
+          <lightning-spinner alternative-text="Loading..." size="small"></lightning-spinner>
+        </div>
+      </template>
+
+      <article class="slds-card">
+        <div class="slds-card__header slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+          <div class="slds-media">
+            <div class="slds-media__figure slds-m-right_small">
+              <lightning-icon icon-name="doctype:report" size="small"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+              <h3 class="slds-text-heading_small">{reportName}</h3>
+            </div>
+          </div>
+          <div class="viewer-actions slds-button-group" role="group">
+            <lightning-button-icon
+              style="padding-right: 5px;"
+              icon-name="utility:refresh"
+              alternative-text="Reload"
+              onclick={reload}>
+            </lightning-button-icon>
+            <lightning-button-icon
+              icon-name="utility:new_window"
+              alternative-text="Open in new tab"
+              onclick={openInNewTab}>
+            </lightning-button-icon>
+          </div>
+        </div>
+
+        <div class="slds-card__body slds-p-around_none">
+          <div class="iframe-container">
+            <template if:true={computedSrc}>
+              <iframe
+                data-key={iframeKey}
+                title={reportName}
+                width="1140"
+                height="541.25"
+                src={computedSrc}
+                frameborder="0"
+                allowfullscreen
+                onload={handleIframeLoad}>
+              </iframe>
+            </template>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <template if:false={hasReport}>
+      <div class="empty-state slds-align_absolute-center slds-text-align_center">
+        <lightning-icon icon-name="utility:info" size="large"></lightning-icon>
+        <h3 class="slds-text-heading_small slds-m-top_small">No Report URL Provided</h3>
+        <p class="slds-text-body_small slds-text-color_weak">Please configure the Report URL property.</p>
+      </div>
+    </template>
+  </div>
+</template>
