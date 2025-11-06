@@ -18,17 +18,17 @@ public with sharing class PowerBIreportsController {
     @AuraEnabled(cacheable=true)
     public static List<ReportPowerBI> getActiveReports() {
 
-        List<Power_BI_reports__c> rows = [
-            SELECT Name, Report_Link__c, Active__c
-            FROM Power_BI_reports__c
-            WHERE Active__c = true AND Report_Link__c != null
-            ORDER BY Name
+        List<PowerBI_Report__c> rows = [
+            SELECT Display_Name__c, URL__c, Sort_Order__c
+            FROM PowerBI_Report__c
+            WHERE Is_Active__c = true AND URL__c != null
+            ORDER BY Sort_Order__c ASC NULLS LAST, Display_Name__c ASC
             LIMIT 2000
         ];
 
         List<ReportPowerBI> out = new List<ReportPowerBI>();
-        for (Power_BI_reports__c r : rows) {
-            out.add(new ReportPowerBI(r.Name, r.Report_Link__c));
+        for (PowerBI_Report__c r : rows) {
+            out.add(new ReportPowerBI(r.Display_Name__c, r.URL__c));
         }
         return out;
     }
