@@ -19,16 +19,16 @@ public with sharing class PowerBIreportsController {
     public static List<ReportPowerBI> getActiveReports() {
 
         List<PowerBI_Report__c> rows = [
-            SELECT Display_Name__c, URL__c, Sort_Order__c
+            SELECT Name, URL__c, Sort_Order__c
             FROM PowerBI_Report__c
             WHERE Is_Active__c = true AND URL__c != null
-            ORDER BY Sort_Order__c ASC NULLS LAST, Display_Name__c ASC
+            ORDER BY Sort_Order__c ASC NULLS LAST, Name ASC
             LIMIT 2000
         ];
 
         List<ReportPowerBI> out = new List<ReportPowerBI>();
         for (PowerBI_Report__c r : rows) {
-            out.add(new ReportPowerBI(r.Display_Name__c, r.URL__c));
+            out.add(new ReportPowerBI(r.Name, r.URL__c));
         }
         return out;
     }

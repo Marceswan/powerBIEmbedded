@@ -2,9 +2,9 @@
 private class PowerBIreportsControllerTest {
 
     // Helper to create test rows
-    private static PowerBI_Report__c makeRow(String displayName, Boolean isActive, String url, Decimal sortOrder) {
+    private static PowerBI_Report__c makeRow(String name, Boolean isActive, String url, Decimal sortOrder) {
         PowerBI_Report__c rec = new PowerBI_Report__c();
-        rec.Display_Name__c = displayName;
+        rec.Name = name;
         rec.Is_Active__c = isActive;
         rec.URL__c = url;
         rec.Sort_Order__c = sortOrder;

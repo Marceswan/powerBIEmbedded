@@ -5,6 +5,7 @@
     <nameField>
         <label>Report Name</label>
         <type>Text</type>
+        <displayFormat></displayFormat>
     </nameField>
     <deploymentStatus>Deployed</deploymentStatus>
     <sharingModel>ReadWrite</sharingModel>
