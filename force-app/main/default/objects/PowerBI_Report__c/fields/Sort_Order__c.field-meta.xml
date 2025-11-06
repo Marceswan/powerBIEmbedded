@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sort_Order__c</fullName>
+    <label>Sort Order</label>
+    <description>Display order in sidebar navigation. Lower numbers appear first. Use increments of 10 (10, 20, 30) to allow for easy reordering.</description>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <precision>3</precision>
+    <scale>0</scale>
+    <externalId>false</externalId>
+    <unique>false</unique>
+</CustomField>
