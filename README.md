@@ -5,9 +5,10 @@ A comprehensive solution for embedding Power BI reports directly in Salesforce L
 ## Quick Navigation
 
 - **Want a quick start?** → [Quick Start Guide](#quick-start-guide)
-- **Choosing which component?** → [Component Comparison](#component-comparison--which-should-i-use)
-- **Single Report (fast setup)?** → [powerBiReport_Single](#powerbireport_single-single-report-component)
+- **Deciding which component?** → [Component Comparison](#component-comparison--which-should-i-use)
+- **Single Report (15 min setup)?** → [powerBiReport_Single](#powerbireport_single-single-report-component)
 - **Multiple Reports (scalable)?** → [powerBiReportList](#powerbireportlist-multi-report-component)
+- **Deploy instructions?** → [Deployment Instructions](#deployment-instructions)
 - **Need help?** → [Troubleshooting](#troubleshooting)
 
 ---
@@ -833,20 +834,12 @@ powerBIEmbedded/
 │               └── Description__c.field-meta.xml
 ├── sfdx-project.json
 ├── package.json
-├── README.md                                   # This file
-├── COMPREHENSIVE_LWC_DOCUMENTATION.md         # Detailed technical docs
-└── CONFIGURATION_COMPARISON_GUIDE.md          # Component decision guide
+└── README.md                                   # This file
 ```
 
 ---
 
 ## Support & Resources
-
-### Documentation Files
-
-- **README.md** (this file) - Overview and quick reference
-- **COMPREHENSIVE_LWC_DOCUMENTATION.md** - Detailed technical documentation
-- **CONFIGURATION_COMPARISON_GUIDE.md** - Component comparison and decision guide
 
 ### External Resources
 
@@ -861,11 +854,10 @@ powerBIEmbedded/
 For issues or questions:
 
 1. Check the **Troubleshooting** section above
-2. Review detailed docs: COMPREHENSIVE_LWC_DOCUMENTATION.md
-3. Check browser console for JavaScript errors (F12)
-4. Check Salesforce debug logs for Apex errors
-5. Verify all prerequisites are met
-6. Try hard-refreshing your browser (Cmd+Shift+R)
+2. Check browser console for JavaScript errors (F12)
+3. Check Salesforce debug logs for Apex errors
+4. Verify all prerequisites are met
+5. Try hard-refreshing your browser (Cmd+Shift+R)
 
 ---
 
